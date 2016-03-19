@@ -1,1 +1,103 @@
 #+title: Solutions for SICP Exercises
+
+* Chapter 1
+** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::54][Exercise 1.1]]
+1. Question 1
+   #+BEGIN_SRC scheme
+     10
+   #+END_SRC
+
+   #+RESULTS:
+   : 10
+
+2. Question 2
+   #+BEGIN_SRC scheme
+     (+ 5 3 4)
+   #+END_SRC
+
+   #+RESULTS:
+   : 12
+
+3. Question 3
+   #+BEGIN_SRC scheme
+     (- 9 1)
+   #+END_SRC
+
+   #+RESULTS:
+   : 8
+
+4. Question 4
+   #+BEGIN_SRC scheme
+     (/ 6 2)
+   #+END_SRC
+
+   #+RESULTS:
+   : 3
+
+5. Question 5
+   #+BEGIN_SRC scheme
+     (+ (* 2 4) (- 4 6))
+   #+END_SRC
+
+   #+RESULTS:
+   : 6
+
+6. Question 6
+   #+BEGIN_SRC scheme :session
+     (define a 3)
+     (define b (+ a 1))
+   #+END_SRC
+
+   #+RESULTS:
+
+7. Question 7
+   #+BEGIN_SRC scheme :session
+     (+ a b (* a b))
+   #+END_SRC
+
+   #+RESULTS:
+   : 19
+
+8. Question 8
+   #+BEGIN_SRC scheme :session
+     (= a b)
+   #+END_SRC
+
+9. Question 9
+   #+BEGIN_SRC scheme :session
+     (if (and (> b a) (< b (* a b)))
+         b
+         a)
+   #+END_SRC
+
+   #+RESULTS:
+   : 4
+
+10. Question 10
+    #+BEGIN_SRC scheme :session
+      (cond ((= a 4) 6)
+            ((= b 4) (+ 6 7 a))
+            (else 25))
+    #+END_SRC
+
+    #+RESULTS:
+    : 16
+
+11. Question 11
+    #+BEGIN_SRC scheme :session
+      (+ 2 (if (> b a) b a))
+    #+END_SRC
+
+    #+RESULTS:
+    : 6
+
+12. Question 12
+    #+BEGIN_SRC scheme :session
+      (* (cond ((> a b) a)
+              ((< a b) b)
+              (else -1))
+        (+ a 1))
+    #+END_SRC
+
+    #+RESULTS:
+    : 16
