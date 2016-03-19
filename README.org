@@ -101,3 +101,14 @@
 
     #+RESULTS:
     : 16
+** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.2]]
+#+BEGIN_SRC scheme
+  (/ (+ (+ 5 4)
+        (- 2 (- 3 (+ 6 (/ 4 5)))))
+     (* (* 3
+           (- 6 2))
+        (- 2 7)))
+#+END_SRC
+
+#+RESULTS:
+: -37/150
