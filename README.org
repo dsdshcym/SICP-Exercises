@@ -156,3 +156,6 @@
 
 #+RESULTS:
 : 25
+
+** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.4]]
+Return $a - |b|$
