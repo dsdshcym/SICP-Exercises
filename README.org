@@ -159,3 +159,12 @@
 
 ** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.4]]
 Return $a - |b|$
+** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.5]]
+- Applicative-order Evaluation
+
+  A infinite loop happens. Since process ~p~ will be expanded to itself
+  infinitely.
+
+- Normal-order Evaluation
+
+  0
