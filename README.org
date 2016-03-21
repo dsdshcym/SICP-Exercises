@@ -168,3 +168,6 @@ Return $a - |b|$
 - Normal-order Evaluation
 
   0
+** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::60][Exercise 1.6]]
+The behavior is as same as the original one. Due to the explaination of how
+~cond~ works in [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::51][this page]].
