@@ -171,3 +171,27 @@ Return $a - |b|$
 ** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::60][Exercise 1.6]]
 The behavior is as same as the original one. Due to the explaination of how
 ~cond~ works in [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::51][this page]].
+** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::61][Exercise 1.7]]
+- Square
+  #+BEGIN_SRC scheme :session
+    (define (square x)
+      (* x x))
+  #+END_SRC
+
+  #+RESULTS:
+
+- Original
+  #+BEGIN_SRC scheme :session
+    (define (good-enough? guess x)
+      (< (abs (- (square guess) x)) 0.001))
+  #+END_SRC
+
+  #+RESULTS:
+
+- Alternative
+  #+BEGIN_SRC scheme :session
+    (define (alternative-good-enough? guess previous-guess)
+      (< (abs (- guess previous-guess)) (* guess 0.001)))
+  #+END_SRC
+
+  Yes, it works better both for small and large numbers.
