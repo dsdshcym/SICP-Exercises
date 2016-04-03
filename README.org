@@ -259,3 +259,29 @@ The behavior is as same as the original one. Due to the explaination of how
 
 - ~h~
   ~(h n)~ computes ~2^(h (- n 1))~
+** Exercise 1.11
+- Recursive
+  #+BEGIN_SRC scheme
+    (define (f-recursive n)
+      (if (< n 3) n
+          (+
+           (* 1 (f-recursive (- n 1)))
+           (* 2 (f-recursive (- n 2)))
+           (* 3 (f-recursive (- n 3)))
+           )))
+  #+END_SRC
+- Iterative
+  #+BEGIN_SRC scheme
+    (define (f-iterative n)
+      (define (f-iterative-helper a b c count)
+        (if (= n count) c
+            (f-iterative-helper
+             b
+             c
+             (+ c (* 2 b) (* 3 c))
+             (+ count 1))
+             ))
+      (if (< n 3) n
+          (f-iterative-helper 0 1 2 2))
+      )
+  #+END_SRC
