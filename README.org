@@ -1,7 +1,7 @@
 #+title: Solutions for SICP Exercises
 
 * Chapter 1
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::54][Exercise 1.1]]
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::54][Exercise 1.1]]
 1. Question 1
    #+BEGIN_SRC scheme
      10
@@ -101,7 +101,7 @@
 
     #+RESULTS:
     : 16
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.2]]
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.2]]
 #+BEGIN_SRC scheme
   (/ (+ (+ 5 4)
         (- 2 (- 3 (+ 6 (/ 4 5)))))
@@ -112,7 +112,7 @@
 
 #+RESULTS:
 : -37/150
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.3]]
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.3]]
 #+BEGIN_SRC scheme
   (define (sum-of-two-larger-squares a b c)
     (define (square x)
@@ -157,9 +157,9 @@
 #+RESULTS:
 : 25
 
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.4]]
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.4]]
 Return $a - |b|$
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.5]]
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.5]]
 - Applicative-order Evaluation
 
   A infinite loop happens. Since process ~p~ will be expanded to itself
@@ -168,10 +168,10 @@ Return $a - |b|$
 - Normal-order Evaluation
 
   0
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::60][Exercise 1.6]]
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::60][Exercise 1.6]]
 The behavior is as same as the original one. Due to the explaination of how
-~cond~ works in [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::51][this page]].
-** [[pdfview:/home/dsdshcym/Dropbox/Docs/sicp.pdf::61][Exercise 1.7]]
+~cond~ works in [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::51][this page]].
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::61][Exercise 1.7]]
 - Square
   #+BEGIN_SRC scheme :session
     (define (square x)
