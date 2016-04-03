@@ -195,3 +195,25 @@ The behavior is as same as the original one. Due to the explaination of how
   #+END_SRC
 
   Yes, it works better both for small and large numbers.
+** Exercise 1.9
+- Recursive
+
+  Grow and shrink
+
+  #+BEGIN_SRC scheme
+    (define (+ a b)
+      (if (= a 0) b (inc (+ (dec a) b))))
+  #+END_SRC
+
+  (+ a b) = (inc (inc (inc ... (inc b)))
+
+- Iterative
+
+  Do not grow and shrink
+
+  #+BEGIN_SRC scheme
+    (define (+ a b)
+      (if (= a 0) b (+ (dec a) (inc b))))
+  #+END_SRC
+
+  (+ a b) = (+ 0 a+b)
