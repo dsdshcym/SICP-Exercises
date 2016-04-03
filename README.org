@@ -217,3 +217,45 @@ The behavior is as same as the original one. Due to the explaination of how
   #+END_SRC
 
   (+ a b) = (+ 0 a+b)
+** Exercise 1.10
+#+BEGIN_SRC scheme :session
+  (define (A x y) (cond ((= y 0) 0)
+                        ((= x 0) (* 2 y))
+                        ((= y 1) 2)
+                        (else (A (- x 1) (A x (- y 1))))))
+#+END_SRC
+
+#+RESULTS:
+
+- (A 1 10)
+  #+BEGIN_SRC scheme :session :exports both
+    (A 1 10)
+  #+END_SRC
+
+  #+RESULTS:
+  : 1024
+
+- (A 2 4)
+  #+BEGIN_SRC scheme :session :exports both
+    (A 2 4)
+  #+END_SRC
+
+  #+RESULTS:
+  : 65536
+
+- (A 3 3)
+  #+BEGIN_SRC scheme :session :exports both
+    (A 3 3)
+  #+END_SRC
+
+  #+RESULTS:
+  : 65536
+
+- ~f~
+  ~(f n)~ computes ~2 * n~.
+
+- ~g~
+  ~(g n)~ computes ~2^n~
+
+- ~h~
+  ~(h n)~ computes ~2^(h (- n 1))~
