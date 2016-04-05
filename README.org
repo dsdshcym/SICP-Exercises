@@ -2,316 +2,316 @@
 
 * Chapter 1
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::54][Exercise 1.1]]
-1. Question 1
-   #+BEGIN_SRC scheme
-     10
-   #+END_SRC
+   1. Question 1
+      #+BEGIN_SRC scheme
+        10
+      #+END_SRC
 
-   #+RESULTS:
-   : 10
+      #+RESULTS:
+      : 10
 
-2. Question 2
-   #+BEGIN_SRC scheme
-     (+ 5 3 4)
-   #+END_SRC
+   2. Question 2
+      #+BEGIN_SRC scheme
+        (+ 5 3 4)
+      #+END_SRC
 
-   #+RESULTS:
-   : 12
+      #+RESULTS:
+      : 12
 
-3. Question 3
-   #+BEGIN_SRC scheme
-     (- 9 1)
-   #+END_SRC
+   3. Question 3
+      #+BEGIN_SRC scheme
+        (- 9 1)
+      #+END_SRC
 
-   #+RESULTS:
-   : 8
+      #+RESULTS:
+      : 8
 
-4. Question 4
-   #+BEGIN_SRC scheme
-     (/ 6 2)
-   #+END_SRC
+   4. Question 4
+      #+BEGIN_SRC scheme
+        (/ 6 2)
+      #+END_SRC
 
-   #+RESULTS:
-   : 3
+      #+RESULTS:
+      : 3
 
-5. Question 5
-   #+BEGIN_SRC scheme
-     (+ (* 2 4) (- 4 6))
-   #+END_SRC
+   5. Question 5
+      #+BEGIN_SRC scheme
+        (+ (* 2 4) (- 4 6))
+      #+END_SRC
 
-   #+RESULTS:
-   : 6
+      #+RESULTS:
+      : 6
 
-6. Question 6
-   #+BEGIN_SRC scheme :session
-     (define a 3)
-     (define b (+ a 1))
-   #+END_SRC
+   6. Question 6
+      #+BEGIN_SRC scheme :session
+        (define a 3)
+        (define b (+ a 1))
+      #+END_SRC
 
-   #+RESULTS:
+      #+RESULTS:
 
-7. Question 7
-   #+BEGIN_SRC scheme :session
-     (+ a b (* a b))
-   #+END_SRC
+   7. Question 7
+      #+BEGIN_SRC scheme :session
+        (+ a b (* a b))
+      #+END_SRC
 
-   #+RESULTS:
-   : 19
+      #+RESULTS:
+      : 19
 
-8. Question 8
-   #+BEGIN_SRC scheme :session
-     (= a b)
-   #+END_SRC
+   8. Question 8
+      #+BEGIN_SRC scheme :session
+        (= a b)
+      #+END_SRC
 
-9. Question 9
-   #+BEGIN_SRC scheme :session
-     (if (and (> b a) (< b (* a b)))
-         b
-         a)
-   #+END_SRC
+   9. Question 9
+      #+BEGIN_SRC scheme :session
+        (if (and (> b a) (< b (* a b)))
+            b
+            a)
+      #+END_SRC
 
-   #+RESULTS:
-   : 4
+      #+RESULTS:
+      : 4
 
-10. Question 10
-    #+BEGIN_SRC scheme :session
-      (cond ((= a 4) 6)
-            ((= b 4) (+ 6 7 a))
-            (else 25))
-    #+END_SRC
+   10. Question 10
+       #+BEGIN_SRC scheme :session
+         (cond ((= a 4) 6)
+               ((= b 4) (+ 6 7 a))
+               (else 25))
+       #+END_SRC
 
-    #+RESULTS:
-    : 16
+       #+RESULTS:
+       : 16
 
-11. Question 11
-    #+BEGIN_SRC scheme :session
-      (+ 2 (if (> b a) b a))
-    #+END_SRC
+   11. Question 11
+       #+BEGIN_SRC scheme :session
+         (+ 2 (if (> b a) b a))
+       #+END_SRC
 
-    #+RESULTS:
-    : 6
+       #+RESULTS:
+       : 6
 
-12. Question 12
-    #+BEGIN_SRC scheme :session
-      (* (cond ((> a b) a)
-              ((< a b) b)
-              (else -1))
-        (+ a 1))
-    #+END_SRC
+   12. Question 12
+       #+BEGIN_SRC scheme :session
+         (* (cond ((> a b) a)
+                 ((< a b) b)
+                 (else -1))
+           (+ a 1))
+       #+END_SRC
 
-    #+RESULTS:
-    : 16
+       #+RESULTS:
+       : 16
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.2]]
-#+BEGIN_SRC scheme
-  (/ (+ (+ 5 4)
-        (- 2 (- 3 (+ 6 (/ 4 5)))))
-     (* (* 3
-           (- 6 2))
-        (- 2 7)))
-#+END_SRC
+   #+BEGIN_SRC scheme
+     (/ (+ (+ 5 4)
+           (- 2 (- 3 (+ 6 (/ 4 5)))))
+        (* (* 3
+              (- 6 2))
+           (- 2 7)))
+   #+END_SRC
 
-#+RESULTS:
-: -37/150
+   #+RESULTS:
+   : -37/150
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.3]]
-#+BEGIN_SRC scheme
-  (define (sum-of-two-larger-squares a b c)
-    (define (square x)
-      (* x x))
+   #+BEGIN_SRC scheme
+     (define (sum-of-two-larger-squares a b c)
+       (define (square x)
+         (* x x))
 
-    (define (sum a b)
-      (+ a b))
+       (define (sum a b)
+         (+ a b))
 
-    (define (larger a b)
-      (if (> a b)
-          a
-          b))
+       (define (larger a b)
+         (if (> a b)
+             a
+             b))
 
-    (define (largest-of-three a b c)
-      (larger a (larger b c)))
+       (define (largest-of-three a b c)
+         (larger a (larger b c)))
 
-    (define (smaller a b)
-      (if (< a b)
-          a
-          b))
+       (define (smaller a b)
+         (if (< a b)
+             a
+             b))
 
-    (define (smallest-of-three a b c)
-      (smaller a (smaller b c)))
+       (define (smallest-of-three a b c)
+         (smaller a (smaller b c)))
 
-    (define (is-middle a b c)
-      (or (and (<= c b) (<= b a))
-          (and (<= a b) (<= b c))))
+       (define (is-middle a b c)
+         (or (and (<= c b) (<= b a))
+             (and (<= a b) (<= b c))))
 
-    (define (middle-of-three a b c)
-      (cond ((is-middle b a c) a)
-            ((is-middle a b c) b)
-            ((is-middle a c b) c)))
+       (define (middle-of-three a b c)
+         (cond ((is-middle b a c) a)
+               ((is-middle a b c) b)
+               ((is-middle a c b) c)))
 
-    (sum (square (largest-of-three a b c))
-         (square (middle-of-three a b c)))
-    )
+       (sum (square (largest-of-three a b c))
+            (square (middle-of-three a b c)))
+       )
 
-  (sum-of-two-larger-squares 1 2 3)
-  (sum-of-two-larger-squares 4 2 3)
-#+END_SRC
+     (sum-of-two-larger-squares 1 2 3)
+     (sum-of-two-larger-squares 4 2 3)
+   #+END_SRC
 
-#+RESULTS:
-: 25
+   #+RESULTS:
+   : 25
 
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.4]]
-Return $a - |b|$
+   Return $a - |b|$
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::55][Exercise 1.5]]
-- Applicative-order Evaluation
+   - Applicative-order Evaluation
 
-  A infinite loop happens. Since process ~p~ will be expanded to itself
-  infinitely.
+     A infinite loop happens. Since process ~p~ will be expanded to itself
+     infinitely.
 
-- Normal-order Evaluation
+   - Normal-order Evaluation
 
-  0
+     0
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::60][Exercise 1.6]]
-The behavior is as same as the original one. Due to the explaination of how
-~cond~ works in [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::51][this page]].
+   The behavior is as same as the original one. Due to the explaination of how
+   ~cond~ works in [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::51][this page]].
 ** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::61][Exercise 1.7]]
-- Square
-  #+BEGIN_SRC scheme :session
-    (define (square x)
-      (* x x))
-  #+END_SRC
+   - Square
+     #+BEGIN_SRC scheme :session
+       (define (square x)
+         (* x x))
+     #+END_SRC
 
-  #+RESULTS:
+     #+RESULTS:
 
-- Original
-  #+BEGIN_SRC scheme :session
-    (define (good-enough? guess x)
-      (< (abs (- (square guess) x)) 0.001))
-  #+END_SRC
+   - Original
+     #+BEGIN_SRC scheme :session
+       (define (good-enough? guess x)
+         (< (abs (- (square guess) x)) 0.001))
+     #+END_SRC
 
-  #+RESULTS:
+     #+RESULTS:
 
-- Alternative
-  #+BEGIN_SRC scheme :session
-    (define (alternative-good-enough? guess previous-guess)
-      (< (abs (- guess previous-guess)) (* guess 0.001)))
-  #+END_SRC
+   - Alternative
+     #+BEGIN_SRC scheme :session
+       (define (alternative-good-enough? guess previous-guess)
+         (< (abs (- guess previous-guess)) (* guess 0.001)))
+     #+END_SRC
 
-  Yes, it works better both for small and large numbers.
+     Yes, it works better both for small and large numbers.
 ** Exercise 1.9
-- Recursive
+   - Recursive
 
-  Grow and shrink
+     Grow and shrink
 
-  #+BEGIN_SRC scheme
-    (define (+ a b)
-      (if (= a 0) b (inc (+ (dec a) b))))
-  #+END_SRC
+     #+BEGIN_SRC scheme
+       (define (+ a b)
+         (if (= a 0) b (inc (+ (dec a) b))))
+     #+END_SRC
 
-  (+ a b) = (inc (inc (inc ... (inc b)))
+     (+ a b) = (inc (inc (inc ... (inc b)))
 
-- Iterative
+   - Iterative
 
-  Do not grow and shrink
+     Do not grow and shrink
 
-  #+BEGIN_SRC scheme
-    (define (+ a b)
-      (if (= a 0) b (+ (dec a) (inc b))))
-  #+END_SRC
+     #+BEGIN_SRC scheme
+       (define (+ a b)
+         (if (= a 0) b (+ (dec a) (inc b))))
+     #+END_SRC
 
-  (+ a b) = (+ 0 a+b)
+     (+ a b) = (+ 0 a+b)
 ** Exercise 1.10
-#+BEGIN_SRC scheme :session
-  (define (A x y) (cond ((= y 0) 0)
-                        ((= x 0) (* 2 y))
-                        ((= y 1) 2)
-                        (else (A (- x 1) (A x (- y 1))))))
-#+END_SRC
+   #+BEGIN_SRC scheme :session
+     (define (A x y) (cond ((= y 0) 0)
+                           ((= x 0) (* 2 y))
+                           ((= y 1) 2)
+                           (else (A (- x 1) (A x (- y 1))))))
+   #+END_SRC
 
-#+RESULTS:
+   #+RESULTS:
 
-- (A 1 10)
-  #+BEGIN_SRC scheme :session :exports both
-    (A 1 10)
-  #+END_SRC
+   - (A 1 10)
+     #+BEGIN_SRC scheme :session :exports both
+       (A 1 10)
+     #+END_SRC
 
-  #+RESULTS:
-  : 1024
+     #+RESULTS:
+     : 1024
 
-- (A 2 4)
-  #+BEGIN_SRC scheme :session :exports both
-    (A 2 4)
-  #+END_SRC
+   - (A 2 4)
+     #+BEGIN_SRC scheme :session :exports both
+       (A 2 4)
+     #+END_SRC
 
-  #+RESULTS:
-  : 65536
+     #+RESULTS:
+     : 65536
 
-- (A 3 3)
-  #+BEGIN_SRC scheme :session :exports both
-    (A 3 3)
-  #+END_SRC
+   - (A 3 3)
+     #+BEGIN_SRC scheme :session :exports both
+       (A 3 3)
+     #+END_SRC
 
-  #+RESULTS:
-  : 65536
+     #+RESULTS:
+     : 65536
 
-- ~f~
-  ~(f n)~ computes ~2 * n~.
+   - ~f~
+     ~(f n)~ computes ~2 * n~.
 
-- ~g~
-  ~(g n)~ computes ~2^n~
+   - ~g~
+     ~(g n)~ computes ~2^n~
 
-- ~h~
-  ~(h n)~ computes ~2^(h (- n 1))~
+   - ~h~
+     ~(h n)~ computes ~2^(h (- n 1))~
 ** Exercise 1.11
-- Recursive
-  #+BEGIN_SRC scheme
-    (define (f-recursive n)
-      (if (< n 3) n
-          (+
-           (* 1 (f-recursive (- n 1)))
-           (* 2 (f-recursive (- n 2)))
-           (* 3 (f-recursive (- n 3)))
-           )))
-  #+END_SRC
-- Iterative
-  #+BEGIN_SRC scheme
-    (define (f-iterative n)
-      (define (f-iterative-helper a b c count)
-        (if (= n count) c
-            (f-iterative-helper
-             b
-             c
-             (+ c (* 2 b) (* 3 c))
-             (+ count 1))
-             ))
-      (if (< n 3) n
-          (f-iterative-helper 0 1 2 2))
-      )
-  #+END_SRC
+   - Recursive
+     #+BEGIN_SRC scheme
+       (define (f-recursive n)
+         (if (< n 3) n
+             (+
+              (* 1 (f-recursive (- n 1)))
+              (* 2 (f-recursive (- n 2)))
+              (* 3 (f-recursive (- n 3)))
+              )))
+     #+END_SRC
+   - Iterative
+     #+BEGIN_SRC scheme
+       (define (f-iterative n)
+         (define (f-iterative-helper a b c count)
+           (if (= n count) c
+               (f-iterative-helper
+                b
+                c
+                (+ c (* 2 b) (* 3 c))
+                (+ count 1))
+                ))
+         (if (< n 3) n
+             (f-iterative-helper 0 1 2 2))
+         )
+     #+END_SRC
 ** Exercise 1.12
-- Calc Level
-  #+BEGIN_SRC scheme
-    (define (get-next-level current)
-      (cond ((null? current) '())
-            ((= 1 (length current)) current)
-            (else (cons (+ (car current) (cadr current))
-                        (get-next-level (cdr current)))))
-      )
+   - Calc Level
+     #+BEGIN_SRC scheme
+       (define (get-next-level current)
+         (cond ((null? current) '())
+               ((= 1 (length current)) current)
+               (else (cons (+ (car current) (cadr current))
+                           (get-next-level (cdr current)))))
+         )
 
-    (define (pascals-triangle-level n)
-      (if (= n 0)
-          '()
-          (cons 1
-                (get-next-level (pascals-triangle-level (- n 1))))
-          )
-      )
+       (define (pascals-triangle-level n)
+         (if (= n 0)
+             '()
+             (cons 1
+                   (get-next-level (pascals-triangle-level (- n 1))))
+             )
+         )
 
-    (pascals-triangle-level 4)
-  #+END_SRC
+       (pascals-triangle-level 4)
+     #+END_SRC
 
-- Calc element
-  #+BEGIN_SRC scheme
-    (define (pascals-triangle-element i j)
-      (cond ((= i 1) 1)
-            ((= j 1) 1)
-            ((= i j) 1)
-            (else (+ (pascals-triangle-element (- i 1) (- j 1))
-                     (pascals-triangle-element (- i 1) j)))))
-  #+END_SRC
+   - Calc element
+     #+BEGIN_SRC scheme
+       (define (pascals-triangle-element i j)
+         (cond ((= i 1) 1)
+               ((= j 1) 1)
+               ((= i j) 1)
+               (else (+ (pascals-triangle-element (- i 1) (- j 1))
+                        (pascals-triangle-element (- i 1) j)))))
+     #+END_SRC
