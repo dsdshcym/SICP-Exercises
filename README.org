@@ -285,3 +285,23 @@ The behavior is as same as the original one. Due to the explaination of how
           (f-iterative-helper 0 1 2 2))
       )
   #+END_SRC
+** Exercise 1.12
+- Calc Level
+  #+BEGIN_SRC scheme
+    (define (get-next-level current)
+      (cond ((null? current) '())
+            ((= 1 (length current)) current)
+            (else (cons (+ (car current) (cadr current))
+                        (get-next-level (cdr current)))))
+      )
+
+    (define (pascals-triangle-level n)
+      (if (= n 0)
+          '()
+          (cons 1
+                (get-next-level (pascals-triangle-level (- n 1))))
+          )
+      )
+
+    (pascals-triangle-level 4)
+  #+END_SRC
