@@ -321,3 +321,14 @@
 ** Exercise 1.15
    - 5   12.15 = 0.05 * 3^5
    - $O(\log{a})$
+** Exercise 1.16
+   #+BEGIN_SRC scheme
+     (define (fast-expt-iter b n a)
+       (define (square x)
+         (* x x))
+       (cond ((= n 0) a)
+             ((even? n) (fast-expt-iter (square b) (/ n 2) a))
+             (else (fast-expt-iter b (- n 1) (* a b)))))
+
+     (fast-expt-iter 4 5 1)
+   #+END_SRC
