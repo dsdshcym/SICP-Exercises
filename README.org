@@ -361,3 +361,34 @@
 
    #+RESULTS:
    : 24
+** Exercise 1.19
+   - Prove
+     - $a' = (b+a)q + ap$
+     - $b' = bp + aq$
+     - $\begin{align}a'' &= (b'+a')q + a'p \\
+       &= (bp + aq + (b+a)q + ap)q + (b+a)qp + ap^2 \\
+       &= bpq + aq^2 + (b+a)q^2 + apq + (b+a)qp + ap^2 \\
+       &= (b+a)(2pq+q^2) + a(p^2+q^2) \end{align}$
+     - $\begin{align}b'' &= b'p + a'q \\
+       &= (bp + aq)p + ((b+a)q + ap)q \\
+       &= b(p^2+q^2) + a(2pq + q^2) \end{align}$
+     - $p' = (p^2+q^2)$
+     - $q' = (q^2+2pq)$
+   - Fib-iter
+     #+BEGIN_SRC scheme
+       (define (fib n)
+         (fib-iter 1 0 0 1 n))
+       (define (fib-iter a b p q count)
+         (cond ((= count 0) b)
+               ((even? count)
+                (fib-iter a
+                          b
+                          (+ (* p p) (* q q)) ; compute p′
+                          (+ (* q q) (* 2 p q)) ; compute q′
+                          (/ count 2)))
+               (else (fib-iter (+ (* b q) (* a q) (* a p))
+                               (+ (* b p) (* a q))
+                               p
+                               q
+                               (- count 1)))))
+     #+END_SRC
