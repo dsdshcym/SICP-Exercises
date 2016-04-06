@@ -333,7 +333,7 @@
      (fast-expt-iter 4 5 1)
    #+END_SRC
 ** Exercise 1.17
-   #+BEGIN_SRC scheme
+   #+BEGIN_SRC scheme :session
      (define (double a) (+ a a))
 
      (define (halve a) (/ a 2))
@@ -342,4 +342,22 @@
        (cond ((= n 0) 0)
              ((even? n) (double (fast-mult a (halve n))))
              (else (+ a (fast-mult a (- n 1))))))
+
+     (fast-mult 4 6)
    #+END_SRC
+
+   #+RESULTS:
+   : 24
+
+** Exercise 1.18
+   #+BEGIN_SRC scheme :session
+     (define (fast-mult-iter a n product)
+       (cond ((= n 0) product)
+             ((even? n) (fast-mult-iter (double a) (halve n) product))
+             (else (fast-mult-iter a (- n 1) (+ a product)))))
+
+     (fast-mult-iter 4 6 0)
+   #+END_SRC
+
+   #+RESULTS:
+   : 24
