@@ -394,7 +394,7 @@
      #+END_SRC
 ** TODO Exercise 1.20
 ** Exercise 1.21
-   #+BEGIN_SRC scheme
+   #+BEGIN_SRC scheme :session
      (define (smallest-divisor n) (find-divisor n 2))
 
      (define (divides? a b) (= (remainder b a) 0))
@@ -410,3 +410,42 @@
      (display (smallest-divisor 1999)) (newline)
      (display (smallest-divisor 19999)) (newline)
    #+END_SRC
+
+   #+RESULTS:
+
+** Exercise 1.22
+   #+BEGIN_SRC scheme :session
+     (define (runtime) (tms:clock (times)))
+
+     (define (prime? n)
+       (equal? n (smallest-divisor n)))
+
+     (define (timed-prime-test n)
+       (newline)
+       (display n)
+       (start-prime-test n (runtime)))
+
+     (define (start-prime-test n start-time)
+       (let ((n-is-prime? (prime? n)))
+           (if n-is-prime?
+               (report-prime (- (runtime) start-time)))
+           n-is-prime?))
+
+     (define (report-prime elapsed-time)
+       (display " *** ")
+       (display elapsed-time))
+
+     (define (first-n-prime-since-x n x count)
+       (if (< count n)
+           (if (timed-prime-test x)
+               (first-n-prime-since-x n (+ 1 x) (+ 1 count))
+               (first-n-prime-since-x n (+ 1 x) count))))
+
+     (first-n-prime-since-x 3 1000 0)
+     (first-n-prime-since-x 3 10000 0)
+     (first-n-prime-since-x 3 100000 0)
+     (first-n-prime-since-x 3 1000000 0)
+     (first-n-prime-since-x 3 10000000 0)
+   #+END_SRC
+
+   #+RESULTS:
