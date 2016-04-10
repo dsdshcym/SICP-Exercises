@@ -465,3 +465,4 @@
 ** Exercise 1.26
    When ~(even? exp)~ this expmod will call ~(expmod base (/ exp 2) m)~ twice,
    hence the $\Theta(\log{n})$ complexity.
+** TODO Exercise 1.27
