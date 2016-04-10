@@ -457,3 +457,8 @@
            (+ test-divisor 1)))
    #+END_SRC
 ** TODO Exercise 1.24
+** Exercise 1.25
+   - No, she's not correct.
+   - The result of ~(fast-expt base exp)~ may exceeds the boundry of the integer
+     representation in our system.
+*** [[https://wizardbook.wordpress.com/2010/11/29/exercise-1-25/][Exercise 1.25 – SICP exercises]]
