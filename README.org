@@ -449,3 +449,10 @@
    #+END_SRC
 
    #+RESULTS:
+** Exercise 1.23
+   #+BEGIN_SRC scheme
+     (define (next test-divisor)
+       (if (equal? test-divisor 3)
+           2
+           (+ test-divisor 1)))
+   #+END_SRC
