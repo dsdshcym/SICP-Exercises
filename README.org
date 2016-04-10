@@ -456,3 +456,4 @@
            2
            (+ test-divisor 1)))
    #+END_SRC
+** TODO Exercise 1.24
