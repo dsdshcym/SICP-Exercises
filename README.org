@@ -489,3 +489,36 @@
      (* 8 (pi-sum 1 1000))
      ;; => 3.139592655589782
    #+END_SRC
+** Exercise 1.31
+   - Recursive
+     #+BEGIN_SRC scheme
+       (define (product term a next n)
+         (if (> a n)
+             1
+             (* (term a) (product term (next a) next n))))
+
+       (define (factorial n)
+         (define (identity x)
+           x)
+         (define (inc x)
+           (+ x 1))
+         (product identity 1 inc n))
+
+       (define (pi-product a b)
+         (define (pi-term x)
+           (if (even? x)
+               (/ (+ x 2) (+ x 1))
+               (/ (+ x 1) (+ x 2))))
+         (define (pi-next x)
+           (+ x 1))
+         (product pi-term a pi-next b))
+     #+END_SRC
+   - Iterative
+     #+BEGIN_SRC scheme
+       (define (iter-product term a next n)
+         (define (iter a result)
+           (if (> a n)
+               result
+               (iter (next a) (* result (term a)))))
+         (iter a 1))
+     #+END_SRC
