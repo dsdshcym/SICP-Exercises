@@ -578,3 +578,37 @@
 
        #+RESULTS:
        : 720
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::110][Exercise 1.33]]
+   - Helper Functions
+     #+BEGIN_SRC scheme :session 1-33
+       (define (identify x)
+         x)
+
+       (define (inc x)
+         (+ x 1))
+
+       (define (square x)
+         (* x x))
+     #+END_SRC
+   - filtered-accumulate
+     #+BEGIN_SRC scheme :session 1-33
+       (define (filtered-accumulate filter combiner null-value term a next b)
+         (if (> a b)
+             null-value
+             (combiner (if (filter (term a))
+                           (term a)
+                           null-value)
+                       (filtered-accumulate filter combiner null-value term (next a) next b))))
+     #+END_SRC
+   - prime-square-sum
+     #+BEGIN_SRC scheme :session 1-33
+       (define (prime-square-sum a b)
+         (filtered-accumulate prime? + 0 square a inc b))
+     #+END_SRC
+   - relative-prime-product
+     #+BEGIN_SRC scheme :session 1-33
+       (define (relative-prime-product n)
+         (define (relative-prime-to-n? x)
+           (= (gcd x n) 1))
+         (filtered-accumulate relative-prime-to-n? * 1 identity 1 inc n))
+     #+END_SRC
