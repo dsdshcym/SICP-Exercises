@@ -522,3 +522,59 @@
                (iter (next a) (* result (term a)))))
          (iter a 1))
      #+END_SRC
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::109][Exercise 1.32]]
+   - Helper Functions
+     #+BEGIN_SRC scheme :session 1-32
+       (define (identify x)
+         x)
+
+       (define (inc x)
+         (+ x 1))
+     #+END_SRC
+
+     #+RESULTS:
+   - Recursive
+     #+BEGIN_SRC scheme :session 1-32
+       (define (accumulate combiner null-value term a next b)
+         (if (> a b)
+             null-value
+             (combiner (term a)
+                       (accumulate combiner null-value term (next a) next b))))
+     #+END_SRC
+
+     #+RESULTS:
+
+   - Iterative
+     #+BEGIN_SRC scheme :session 1-32
+       (define (accumulate combiner null-value term a next b)
+         (define (iter a result)
+           (if (> a b)
+               result
+               (iter (next a) (combiner result (term a)))))
+         (iter a null-value))
+     #+END_SRC
+
+     #+RESULTS:
+
+   - Test Functions
+     - Sum
+       #+BEGIN_SRC scheme :session 1-32
+         (define (sum a b)
+           (accumulate + 0 identity a inc b))
+
+         (sum 1 21)
+       #+END_SRC
+
+       #+RESULTS:
+       : 231
+
+     - Product
+       #+BEGIN_SRC scheme :session 1-32
+         (define (product a b)
+           (accumulate * 1 identity a inc b))
+
+         (product 1 6)
+       #+END_SRC
+
+       #+RESULTS:
+       : 720
