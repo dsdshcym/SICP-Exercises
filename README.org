@@ -612,3 +612,8 @@
            (= (gcd x n) 1))
          (filtered-accumulate relative-prime-to-n? * 1 identity 1 inc n))
      #+END_SRC
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::116][Exercise 1.34]]
+   1. (f f)
+   2. (f 2)
+   3. (2 2)
+   4. Error
