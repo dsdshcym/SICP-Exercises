@@ -734,3 +734,13 @@
 
    #+RESULTS:
    : -5.548300656344823e-08
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::131][Exercise 1.40]]
+   #+BEGIN_SRC scheme
+     (define (cubic a b c)
+       (define (cubic-function x)
+         (+ (* x x x)
+            (* a x x)
+            (* b x)
+            c))
+       cubic-function)
+   #+END_SRC
