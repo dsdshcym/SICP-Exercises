@@ -744,3 +744,18 @@
             c))
        cubic-function)
    #+END_SRC
+** [[skim:///Users/dsdshcym/Dropbox/Docs/sicp.pdf::131][Exercise 1.41]]
+   - 21
+   - code
+     #+BEGIN_SRC scheme
+       (define (double p)
+         (lambda (x) (p (p x))))
+
+       (define (inc x)
+         (+ x 1))
+
+       (((double (double double)) inc) 5)
+     #+END_SRC
+
+     #+RESULTS:
+     : 21
